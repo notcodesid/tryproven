@@ -221,7 +221,7 @@ export default function Home() {
   const timeString = `${String(timeLeft.days).padStart(2, '0')}:${String(timeLeft.hours).padStart(2, '0')}:${String(timeLeft.minutes).padStart(2, '0')}:${String(timeLeft.seconds).padStart(2, '0')}`;
 
   return (
-    <div className="relative flex min-h-screen flex-col items-center bg-black overflow-hidden">
+    <div className="relative flex h-screen flex-col items-center bg-black overflow-hidden">
       {/* Subtle gradient overlay */}
       <div className="absolute inset-0 from-black via-transparent to-purple-900/10 pointer-events-none" />
 
@@ -248,10 +248,10 @@ export default function Home() {
       </div>
       
       {/* Main Content */}
-      <div className="relative z-10 flex flex-1 flex-col items-center justify-center pt-12 pb-8 px-6 w-full max-w-5xl">
+      <div className="relative z-10 flex flex-col items-center justify-center pt-8 pb-0 px-6 w-full max-w-5xl">
 
         {/* LED Countdown Display */}
-        <div className="animate-fade-in-up-delay-3 bg-black/40 rounded-2xl p-6 md:p-8 lg:p-10 shadow-2xl  backdrop-blur-sm">
+        <div className="animate-fade-in-up-delay-3 bg-black/40 rounded-2xl p-4 md:p-6 lg:p-8 shadow-2xl  backdrop-blur-sm">
           <LEDDisplay
             value={timeString}
             lit="#ffffff"
@@ -267,7 +267,7 @@ export default function Home() {
         </div>
 
         {/* Early Access Message */}
-        <div className="animate-fade-in-up-delay-3 text-center mb-4">
+        <div className="animate-fade-in-up-delay-3 text-center mb-2">
           <p className="text-white/70 text-sm md:text-base" style={{ fontFamily: 'system-ui, sans-serif' }}>
             Early access on <span className="text-white font-semibold">Dec 10</span> for waitlist
           </p>
@@ -321,8 +321,8 @@ export default function Home() {
       </div>
 
       {/* iPhone Mockup with App Screenshot */}
-      <div className="animate-float-up relative w-full flex justify-center">
-        <div className="relative w-[400px] md:w-[550px] lg:w-[700px]">
+      <div className="animate-float-up relative w-full flex justify-center -mt-4">
+        <div className="relative w-[520px] md:w-[520px] lg:w-[650px]">
           {/* Phone Shadow */}
           <div className="absolute -inset-4 bg-gradient-to-b from-[#923534]/5 to-[#923534]/20 blur-3xl rounded-full" />
           

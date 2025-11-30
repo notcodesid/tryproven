@@ -267,30 +267,30 @@ export default function Home() {
         </div>
 
         {/* Early Access Message */}
-        <div className="animate-fade-in-up-delay-3 text-center mb-2">
+        <div className="animate-fade-in-up-delay-3 text-center mb-5">
           <p className="text-white/70 text-sm md:text-base" style={{ fontFamily: 'system-ui, sans-serif' }}>
-            Early access on <span className="text-white font-semibold">Dec 10</span> for waitlist
+            Early access on <span className="text-white font-semibold">Dec 15</span> for waitlist
           </p>
         </div>
 
         {/* Waitlist Form - LED Style */}
         <div className="animate-fade-in-up-delay-3 w-full max-w-xl">
           {!isSubmitted ? (
-            <div className="bg-[#111] rounded-2xl p-2 md:p-3">
+            <div className=" rounded-2xl p-2 md:p-3">
               <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2 md:gap-3">
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email"
-                  className="flex-1 px-5 py-3.5 rounded-xl bg-[#1a1a1a] text-white placeholder:text-[#555] focus:outline-none focus:ring-2 focus:ring-[#333] transition-all duration-300 text-sm"
+                  className="flex-1 px-6 py-3.5 rounded-xl bg-[#1a1a1a] text-white placeholder:text-[#555] focus:outline-none focus:ring-2 focus:ring-[#333] transition-all duration-300 text-sm"
                   style={{ fontFamily: 'system-ui, sans-serif' }}
                   required
                 />
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-[#FF5757] via-[#FF6056] to-[#FF7E50] text-white font-semibold text-sm hover:opacity-90 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
+                  className="px-6 py-3.5 rounded-xl bg-gradient-to-r from-[#FF5757] via-[#FF6056] to-[#FF7E50] text-white font-semibold text-sm hover:opacity-90 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
                   style={{ fontFamily: 'system-ui, sans-serif' }}
                 >
                   {isSubmitting ? (
@@ -313,7 +313,7 @@ export default function Home() {
                 <svg className="w-5 h-5 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
-                You're in! See you on Dec 10.
+                Thank you for joining! See you on Dec 15.
               </p>
             </div>
           )}

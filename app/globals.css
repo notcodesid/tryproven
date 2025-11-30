@@ -1,0 +1,137 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #000000;
+  
+  /* Brand Colors */
+  --proven-green: #923534;
+  --soft-purple: #C9AABA;
+  --warm-gray: #EFE6DD;
+  
+  /* Accent Gradient */
+  --coral: #FF5757;
+  --coral-mid: #FF6056;
+  --coral-orange: #FF7053;
+  --orange: #FF7E50;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-proven-green: var(--proven-green);
+  --color-soft-purple: var(--soft-purple);
+  --color-warm-gray: var(--warm-gray);
+  --color-coral: var(--coral);
+  --color-coral-mid: var(--coral-mid);
+  --color-coral-orange: var(--coral-orange);
+  --color-orange: var(--orange);
+  --font-playfair: var(--font-playfair);
+}
+
+body {
+  background: #000000;
+  color: #ffffff;
+  font-family: var(--font-playfair), Georgia, serif;
+  overflow-x: hidden;
+}
+
+/* Smooth fade-in animation */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float-up {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(146, 53, 52, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(146, 53, 52, 0.5);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 1s ease-out forwards;
+}
+
+.animate-fade-in-up-delay-1 {
+  opacity: 0;
+  animation: fade-in-up 1s ease-out 0.15s forwards;
+}
+
+.animate-fade-in-up-delay-2 {
+  opacity: 0;
+  animation: fade-in-up 1s ease-out 0.3s forwards;
+}
+
+.animate-fade-in-up-delay-3 {
+  opacity: 0;
+  animation: fade-in-up 1s ease-out 0.5s forwards;
+}
+
+.animate-float-up {
+  opacity: 0;
+  animation: float-up 1.2s ease-out 0.6s forwards;
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--warm-gray);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--soft-purple);
+  border-radius: 3px;
+}
+
+/* Focus states */
+input:focus {
+  outline: none;
+}
+

@@ -321,19 +321,19 @@ export default function Home() {
       </div>
 
       {/* iPhone Mockup with App Screenshot */}
-      <div className="animate-float-up relative w-full flex justify-center -mt-4">
-        <div className="relative w-[520px] md:w-[520px] lg:w-[650px]">
+      <div className="animate-float-up relative w-full flex justify-center items-end flex-1 -mt-4">
+        <div className="relative w-full max-w-[520px] md:max-w-[520px] lg:max-w-[650px] h-full flex items-end">
           {/* Phone Shadow */}
           <div className="absolute -inset-4 bg-gradient-to-b from-[#923534]/5 to-[#923534]/20 blur-3xl rounded-full" />
           
           {/* Mockup Image */}
-          <div className="relative">
+          <div className="relative w-full h-full flex items-end justify-center">
             <Image
               src="/mockup-2.png"
               width={1100}
               height={1000}
               alt="Proven App Interface"
-              className="w-full h-auto drop-shadow-2xl"
+              className="w-full h-auto max-h-full object-contain drop-shadow-2xl"
               priority
             />
           </div>

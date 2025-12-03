@@ -10,8 +10,27 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   title: "Proven",
-  description: "Your money. Your devices. Your world.",
+  description: "Bet on Yourself, Get Rewarded" ,
+
+  openGraph: {
+    title: "Proven",
+    description: "Bet on Yourself, Get Rewarded",  
+    url: "https://tryproven.fun/",
+    siteName: "Proven",
+    images: [
+      {
+        url:"/open-graph.png", // image link
+        width: 1200,
+        height: 500,
+        alt: "Proven",
+      },
+    ],
+    locale: "en_US",
+    type: "article",
+  },
 };
+
+
 
 export default function RootLayout({
   children,

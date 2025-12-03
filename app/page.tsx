@@ -131,13 +131,13 @@ interface TimeLeft {
 
 function LEDDigit({ pattern, lit, unlit }: { pattern: number[][]; lit: string; unlit: string }) {
   return (
-    <div className="grid gap-[2px] md:gap-[3px]">
+    <div className="grid gap-[1px] sm:gap-[2px] md:gap-[3px]">
       {pattern.map((row, rowIndex) => (
-        <div key={rowIndex} className="flex gap-[2px] md:gap-[3px]">
+        <div key={rowIndex} className="flex gap-[1px] sm:gap-[2px] md:gap-[3px]">
           {row.map((cell, cellIndex) => (
             <div
               key={cellIndex}
-              className="w-[6px] h-[6px] md:w-[10px] md:h-[10px] lg:w-[12px] lg:h-[12px] rounded-sm transition-colors duration-150"
+              className="w-[4px] h-[4px] sm:w-[6px] sm:h-[6px] md:w-[10px] md:h-[10px] lg:w-[12px] lg:h-[12px] rounded-[1px] sm:rounded-sm transition-colors duration-150"
               style={{ backgroundColor: cell ? lit : unlit }}
             />
           ))}
@@ -149,7 +149,7 @@ function LEDDigit({ pattern, lit, unlit }: { pattern: number[][]; lit: string; u
 
 function LEDDisplay({ value, lit, unlit }: { value: string; lit: string; unlit: string }) {
   return (
-    <div className="flex gap-3 md:gap-5 lg:gap-6">
+    <div className="flex gap-1 sm:gap-2 md:gap-5 lg:gap-6">
       {value.split('').map((char, index) => (
         <LEDDigit
           key={index}
@@ -273,21 +273,21 @@ export default function Home() {
       </div>
       
       {/* Main Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center pt-8 pb-0 px-6 w-full max-w-5xl">
+      <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-3 sm:px-6 w-full max-w-5xl">
 
         {/* LED Countdown Display */}
-        <div className="animate-fade-in-up-delay-3 bg-black/40 rounded-2xl p-4 md:p-6 lg:p-8 shadow-2xl  backdrop-blur-sm">
+        <div className="animate-fade-in-up-delay-3 bg-black/40 rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6 lg:p-8 shadow-2xl backdrop-blur-sm">
           <LEDDisplay
             value={timeString}
             lit="#ffffff"
             unlit="#333333"
           />
           {/* Labels */}
-          <div className="flex justify-between mt-4 px-1">
-            <span className="text-[10px] md:text-xs text-white/50 uppercase tracking-wider" style={{ fontFamily: 'system-ui, sans-serif' }}>Days</span>
-            <span className="text-[10px] md:text-xs text-white/50 uppercase tracking-wider" style={{ fontFamily: 'system-ui, sans-serif' }}>Hours</span>
-            <span className="text-[10px] md:text-xs text-white/50 uppercase tracking-wider" style={{ fontFamily: 'system-ui, sans-serif' }}>Min</span>
-            <span className="text-[10px] md:text-xs text-white/50 uppercase tracking-wider" style={{ fontFamily: 'system-ui, sans-serif' }}>Sec</span>
+          <div className="flex justify-between mt-2 sm:mt-4 px-1">
+            <span className="text-[8px] sm:text-[10px] md:text-xs text-white/50 uppercase tracking-wider" style={{ fontFamily: 'system-ui, sans-serif' }}>Days</span>
+            <span className="text-[8px] sm:text-[10px] md:text-xs text-white/50 uppercase tracking-wider" style={{ fontFamily: 'system-ui, sans-serif' }}>Hours</span>
+            <span className="text-[8px] sm:text-[10px] md:text-xs text-white/50 uppercase tracking-wider" style={{ fontFamily: 'system-ui, sans-serif' }}>Min</span>
+            <span className="text-[8px] sm:text-[10px] md:text-xs text-white/50 uppercase tracking-wider" style={{ fontFamily: 'system-ui, sans-serif' }}>Sec</span>
           </div>
         </div>
 
@@ -346,19 +346,19 @@ export default function Home() {
       </div>
 
       {/* iPhone Mockup with App Screenshot */}
-      <div className="animate-float-up relative w-full flex justify-center items-end flex-1 -mt-4">
-        <div className="relative w-full max-w-[520px] md:max-w-[520px] lg:max-w-[650px] h-full flex items-end">
+      <div className="animate-float-up relative w-full flex justify-center items-end mt-auto">
+        <div className="relative w-full max-w-[320px] sm:max-w-[420px] md:max-w-[520px] lg:max-w-[650px] flex items-end">
           {/* Phone Shadow */}
           <div className="absolute -inset-4 bg-gradient-to-b from-[#923534]/5 to-[#923534]/20 blur-3xl rounded-full" />
           
           {/* Mockup Image */}
-          <div className="relative w-full h-full flex items-end justify-center">
+          <div className="relative w-full flex items-end justify-center">
             <Image
               src="/mockup-2.png"
               width={1100}
               height={1000}
               alt="Proven App Interface"
-              className="w-full h-auto max-h-full object-contain drop-shadow-2xl"
+              className="w-full h-auto object-contain drop-shadow-2xl"
               priority
             />
           </div>

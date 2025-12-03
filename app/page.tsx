@@ -168,16 +168,38 @@ export default function Home() {
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [responseMessage, setResponseMessage] = useState('');
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (!email) return;
-    
+
     setIsSubmitting(true);
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    setIsSubmitted(true);
-    setIsSubmitting(false);
+
+    try {
+      const response = await fetch('/api/waitlist', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setResponseMessage(data.message || 'Thank you for joining! See you on Dec 15.');
+        setIsSubmitted(true);
+        setEmail('');
+      } else {
+        alert(data.error || 'Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error submitting email:', error);
+      alert('Something went wrong. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   useEffect(() => {
@@ -228,7 +250,8 @@ export default function Home() {
       {/* Social Links - Top Right */}
       <div className="absolute top-6 right-6 z-20 flex items-center gap-4">
         <a
-          href="https://x.com/tryproven"
+          href="https://x.com/tryprovenn
+          "
           target="_blank"
           rel="noopener noreferrer"
           className="text-white/60 hover:text-white transition-colors duration-200"
@@ -236,7 +259,9 @@ export default function Home() {
         >
           <XIcon />
         </a>
-        <a
+
+        {/* telegram link */}
+        {/* <a
           href="https://t.me/tryproven"
           target="_blank"
           rel="noopener noreferrer"
@@ -244,7 +269,7 @@ export default function Home() {
           aria-label="Join us on Telegram"
         >
           <TelegramIcon />
-        </a>
+        </a> */}
       </div>
       
       {/* Main Content */}
@@ -309,11 +334,11 @@ export default function Home() {
             </div>
           ) : (
             <div className="bg-[#111] rounded-2xl p-6 text-center">
-              <p className="text-white font-medium flex items-center justify-center gap-2 text-sm" style={{ fontFamily: 'system-ui, sans-serif' }}>
-                <svg className="w-5 h-5 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <p className="text-white font-medium flex items-center justify-center gap-2 text-sm whitespace-pre-line" style={{ fontFamily: 'system-ui, sans-serif' }}>
+                <svg className="w-5 h-5 text-green-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
-                Thank you for joining! See you on Dec 15.
+                {responseMessage || 'Thank you for joining! See you on Dec 15.'}
               </p>
             </div>
           )}

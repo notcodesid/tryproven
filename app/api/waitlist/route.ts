@@ -74,7 +74,7 @@ export async function POST(req: Request) {
                           <tr>
                             <td style="padding-bottom:24px;">
                               <p style="margin:0;font-size:16px;line-height:1.6;color:#222222;">
-                                you're part of the earliest crew. we'll hit your inbox the moment proven launches, plus sneak peeks as we drop them.
+                                you're part of the earliest crew. early access starts jan 18. we'll hit your inbox the moment proven launches, plus sneak peeks as we drop them.
                               </p>
                             </td>
                           </tr>
@@ -114,8 +114,8 @@ export async function POST(req: Request) {
       }
 
       const message = emailSent
-        ? "thanks for joining!\n\nyou're in. not just the waitlist but the beginning of what's next.."
-        : "thanks for joining!\n\nyou're in. keep an eye on your inbox for what's coming.";
+        ? "thanks for joining! see you on jan 18."
+        : "thanks for joining! see you on jan 18.";
 
       return Response.json({ message }, { status: 200 });
     } catch (dbError: unknown) {
@@ -130,7 +130,7 @@ export async function POST(req: Request) {
         return Response.json(
           {
             message:
-              "you're already part of it. spread the word and share it with your crew!",
+              "you're already on the list! see you on jan 18.",
           },
           { status: 200 }
         );

@@ -22,103 +22,103 @@ function TelegramIcon() {
 // LED digit patterns (5 columns x 7 rows)
 const DIGIT_PATTERNS: Record<string, number[][]> = {
   '0': [
-    [1,1,1,1,1],
-    [1,0,0,0,1],
-    [1,0,0,0,1],
-    [1,0,0,0,1],
-    [1,0,0,0,1],
-    [1,0,0,0,1],
-    [1,1,1,1,1],
+    [1, 1, 1, 1, 1],
+    [1, 0, 0, 0, 1],
+    [1, 0, 0, 0, 1],
+    [1, 0, 0, 0, 1],
+    [1, 0, 0, 0, 1],
+    [1, 0, 0, 0, 1],
+    [1, 1, 1, 1, 1],
   ],
   '1': [
-    [0,0,1,0,0],
-    [0,1,1,0,0],
-    [1,0,1,0,0],
-    [0,0,1,0,0],
-    [0,0,1,0,0],
-    [0,0,1,0,0],
-    [1,1,1,1,1],
+    [0, 0, 1, 0, 0],
+    [0, 1, 1, 0, 0],
+    [1, 0, 1, 0, 0],
+    [0, 0, 1, 0, 0],
+    [0, 0, 1, 0, 0],
+    [0, 0, 1, 0, 0],
+    [1, 1, 1, 1, 1],
   ],
   '2': [
-    [1,1,1,1,1],
-    [0,0,0,0,1],
-    [0,0,0,0,1],
-    [1,1,1,1,1],
-    [1,0,0,0,0],
-    [1,0,0,0,0],
-    [1,1,1,1,1],
+    [1, 1, 1, 1, 1],
+    [0, 0, 0, 0, 1],
+    [0, 0, 0, 0, 1],
+    [1, 1, 1, 1, 1],
+    [1, 0, 0, 0, 0],
+    [1, 0, 0, 0, 0],
+    [1, 1, 1, 1, 1],
   ],
   '3': [
-    [1,1,1,1,1],
-    [0,0,0,0,1],
-    [0,0,0,0,1],
-    [1,1,1,1,1],
-    [0,0,0,0,1],
-    [0,0,0,0,1],
-    [1,1,1,1,1],
+    [1, 1, 1, 1, 1],
+    [0, 0, 0, 0, 1],
+    [0, 0, 0, 0, 1],
+    [1, 1, 1, 1, 1],
+    [0, 0, 0, 0, 1],
+    [0, 0, 0, 0, 1],
+    [1, 1, 1, 1, 1],
   ],
   '4': [
-    [1,0,0,0,1],
-    [1,0,0,0,1],
-    [1,0,0,0,1],
-    [1,1,1,1,1],
-    [0,0,0,0,1],
-    [0,0,0,0,1],
-    [0,0,0,0,1],
+    [1, 0, 0, 0, 1],
+    [1, 0, 0, 0, 1],
+    [1, 0, 0, 0, 1],
+    [1, 1, 1, 1, 1],
+    [0, 0, 0, 0, 1],
+    [0, 0, 0, 0, 1],
+    [0, 0, 0, 0, 1],
   ],
   '5': [
-    [1,1,1,1,1],
-    [1,0,0,0,0],
-    [1,0,0,0,0],
-    [1,1,1,1,1],
-    [0,0,0,0,1],
-    [0,0,0,0,1],
-    [1,1,1,1,1],
+    [1, 1, 1, 1, 1],
+    [1, 0, 0, 0, 0],
+    [1, 0, 0, 0, 0],
+    [1, 1, 1, 1, 1],
+    [0, 0, 0, 0, 1],
+    [0, 0, 0, 0, 1],
+    [1, 1, 1, 1, 1],
   ],
   '6': [
-    [1,1,1,1,1],
-    [1,0,0,0,0],
-    [1,0,0,0,0],
-    [1,1,1,1,1],
-    [1,0,0,0,1],
-    [1,0,0,0,1],
-    [1,1,1,1,1],
+    [1, 1, 1, 1, 1],
+    [1, 0, 0, 0, 0],
+    [1, 0, 0, 0, 0],
+    [1, 1, 1, 1, 1],
+    [1, 0, 0, 0, 1],
+    [1, 0, 0, 0, 1],
+    [1, 1, 1, 1, 1],
   ],
   '7': [
-    [1,1,1,1,1],
-    [0,0,0,0,1],
-    [0,0,0,1,0],
-    [0,0,1,0,0],
-    [0,0,1,0,0],
-    [0,0,1,0,0],
-    [0,0,1,0,0],
+    [1, 1, 1, 1, 1],
+    [0, 0, 0, 0, 1],
+    [0, 0, 0, 1, 0],
+    [0, 0, 1, 0, 0],
+    [0, 0, 1, 0, 0],
+    [0, 0, 1, 0, 0],
+    [0, 0, 1, 0, 0],
   ],
   '8': [
-    [1,1,1,1,1],
-    [1,0,0,0,1],
-    [1,0,0,0,1],
-    [1,1,1,1,1],
-    [1,0,0,0,1],
-    [1,0,0,0,1],
-    [1,1,1,1,1],
+    [1, 1, 1, 1, 1],
+    [1, 0, 0, 0, 1],
+    [1, 0, 0, 0, 1],
+    [1, 1, 1, 1, 1],
+    [1, 0, 0, 0, 1],
+    [1, 0, 0, 0, 1],
+    [1, 1, 1, 1, 1],
   ],
   '9': [
-    [1,1,1,1,1],
-    [1,0,0,0,1],
-    [1,0,0,0,1],
-    [1,1,1,1,1],
-    [0,0,0,0,1],
-    [0,0,0,0,1],
-    [1,1,1,1,1],
+    [1, 1, 1, 1, 1],
+    [1, 0, 0, 0, 1],
+    [1, 0, 0, 0, 1],
+    [1, 1, 1, 1, 1],
+    [0, 0, 0, 0, 1],
+    [0, 0, 0, 0, 1],
+    [1, 1, 1, 1, 1],
   ],
   ':': [
-    [0,0,0,0,0],
-    [0,0,1,0,0],
-    [0,0,0,0,0],
-    [0,0,0,0,0],
-    [0,0,0,0,0],
-    [0,0,1,0,0],
-    [0,0,0,0,0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 1, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 1, 0, 0],
+    [0, 0, 0, 0, 0],
   ],
 };
 
@@ -188,7 +188,7 @@ export default function Home() {
       const data = await response.json();
 
       if (response.ok) {
-        setResponseMessage(data.message || 'Thank you for joining! See you on Dec 15.');
+        setResponseMessage(data.message || 'Thank you for joining! See you on Jan 18.');
         setIsSubmitted(true);
         setEmail('');
       } else {
@@ -206,7 +206,7 @@ export default function Home() {
     setMounted(true);
 
     const calculateTimeLeft = (): TimeLeft => {
-      const targetDate = new Date('2025-12-25T00:00:00').getTime();
+      const targetDate = new Date('2026-02-18T00:00:00').getTime();
       const now = new Date().getTime();
       const difference = targetDate - now;
 
@@ -271,7 +271,7 @@ export default function Home() {
           <TelegramIcon />
         </a> */}
       </div>
-      
+
       {/* Main Content */}
       <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-3 sm:px-6 w-full max-w-5xl">
 
@@ -294,7 +294,7 @@ export default function Home() {
         {/* Early Access Message */}
         <div className="animate-fade-in-up-delay-3 text-center mb-5">
           <p className="text-white/70 text-sm md:text-base" style={{ fontFamily: 'system-ui, sans-serif' }}>
-            Early access on <span className="text-white font-semibold">Dec 15</span> for waitlist
+            Early access on <span className="text-white font-semibold">Jan 18</span> for waitlist
           </p>
         </div>
 
@@ -338,7 +338,7 @@ export default function Home() {
                 <svg className="w-5 h-5 text-green-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
-                {responseMessage || 'Thank you for joining! See you on Dec 15.'}
+                {responseMessage || 'Thank you for joining! See you on Jan 18.'}
               </p>
             </div>
           )}
@@ -350,7 +350,7 @@ export default function Home() {
         <div className="relative w-full max-w-[320px] sm:max-w-[420px] md:max-w-[520px] lg:max-w-[650px] flex items-end">
           {/* Phone Shadow */}
           <div className="absolute -inset-4 bg-gradient-to-b from-[#923534]/5 to-[#923534]/20 blur-3xl rounded-full" />
-          
+
           {/* Mockup Image */}
           <div className="relative w-full flex items-end justify-center">
             <Image
